@@ -18,9 +18,8 @@ import dayjs from "dayjs";
  * @param {string} dateString a date like "2026-03-15"
  * @returns {string} the same date as DD/MM/YYYY
  */
-export function formatDate(dateString) {
-  // TODO: dayjs(dateString), then .format() with the right pattern.
-  throw new Error("formatDate is not written yet");
+export function formatDate(dataString) {
+  return dayjs(dataString).format("DD/MM/YYYY");
 }
 
 /**
@@ -30,9 +29,8 @@ export function formatDate(dateString) {
  * @param {string} dateString
  * @returns {number}
  */
-export function yearOf(dateString) {
-  // TODO: dayjs has a method for exactly this. It returns a number.
-  throw new Error("yearOf is not written yet");
+export function yearOf(datestring) {
+  return dayjs(datestring).year();
 }
 
 /**
@@ -51,7 +49,9 @@ export function yearOf(dateString) {
  */
 
 // TODO: write addDays here.
-
+export function addDays(datastring,days){
+  return dayjs(datastring).add(days, "days").format("YYYY-MM-DD");
+}
 /**
  * The package YOU chose from the registry.
  *
@@ -63,4 +63,4 @@ export function yearOf(dateString) {
  *
  * @type {string}
  */
-export const myPackage = "REPLACE ME";
+export const myPackage = "slugify";
